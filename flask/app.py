@@ -35,6 +35,10 @@ def upload():
         img.save(destination, 'JPEG')
         print(img)
 
+        # This is where the AI will run and then delete the photo after
+        # results are calculated. Should return a json object with data on
+        # classification.
+
     return render_template('success.html')
 
 if __name__ == '__main__':
