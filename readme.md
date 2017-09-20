@@ -15,3 +15,31 @@ identify mushrooms. My hope is that this api could be used in a colleagues mobil
 - post
 - receives admin key
 - 
+
+
+## AI outline
+
+L layer
+
+layer_dims_example:
+layers_dims = [12288, 20, 7, 5, 1]
+
+def initialize_parameters_deep(layer_dims):
+    ...
+    return parameters 
+    
+def L_model_forward(X, parameters):
+    ...
+    return AL, caches
+    
+def compute_cost(AL, Y):
+    ...
+    return cost
+    
+def L_model_backward(AL, Y, caches):
+    ...
+    return grads
+    
+def update_parameters(parameters, grads, learning_rate):
+    ...
+    return parameters
