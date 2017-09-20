@@ -1,8 +1,20 @@
 import os
 from flask import Flask, render_template, request
 from PIL import Image
+import numpy as np
 from resizeimage import resizeimage
+# import neuralnet
+#
+#
+# # hyper-parameters
+# layers_dims = [30000, 20, 1]  # all images should be 100 x 100 px so input layer is 30000 in length.
+# learning_rate = 0.0075
+# training_set = {}
+# print_cost = True
+# num_iterations = 3000
 
+
+# neuralnet.L_layer_model(X, Y, layers_dims, learning_rate, num_iterations, print_cost)
 
 app = Flask(__name__)
 
@@ -26,14 +38,14 @@ def upload():
         filename = file.filename
         destination = '/'.join([target, filename])
         file.save(destination)
-        print(destination)
         img = Image.open(destination)
-        print(img)
         img = resizeimage.resize_height(img, 100)
         img = resizeimage.resize_width(img, 100)
-        print(img.format)
         img.save(destination, 'JPEG')
-        print(img)
+        img = np.array(Image.open(destination))
+        img = img.flatten()
+        img = img.reshape((img.shape[0], 1))
+        print(img.shape)
 
         # This is where the AI will run and then delete the photo after
         # results are calculated. Should return a json object with data on

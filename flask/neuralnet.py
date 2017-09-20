@@ -2,14 +2,6 @@
 import numpy as np
 
 
-# hyper-parameters
-layers_dims = [30000, 20, 1]  # all images should be 100 x 100 px so input layer is 30000 in length.
-learning_rate = 0.01
-training_set = {}
-print_cost = True
-num_iterations = 3000
-
-
 #################################  Helper Functions  #################################
 
 def sigmoid(Z):
