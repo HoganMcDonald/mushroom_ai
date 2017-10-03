@@ -3,11 +3,12 @@ from flask import Flask, render_template, request
 from PIL import Image
 import numpy as np
 from resizeimage import resizeimage
+import h5py
 # import neuralnet
 #
 #
 # # hyper-parameters
-# layers_dims = [30000, 20, 1]  # all images should be 100 x 100 px so input layer is 30000 in length.
+# layers_dims = [30000, 20, 5, 1]  # all images should be 100 x 100 px so input layer is 30000 in length.
 # learning_rate = 0.0075
 # training_set = {}
 # print_cost = True
